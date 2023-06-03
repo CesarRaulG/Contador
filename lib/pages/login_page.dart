@@ -32,33 +32,38 @@ class Contenido extends StatefulWidget {
 class _ContenidoState extends State<Contenido> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
-            'Login',
-            style: TextStyle(
-                color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Welcome to your account',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 10,
-              letterSpacing: 1.5,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text(
+              'Login',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Datos(),
-        ],
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              'Welcome to your account',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 10,
+                letterSpacing: 1.5,
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Datos(),
+          ],
+        ),
       ),
     );
   }
@@ -159,12 +164,9 @@ class _RememberState extends State<Remember> {
                 valor == false ? valor = true : valor = false;
               });
             }),
-            const Text('Remember me'),
-            const Spacer(),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Forgot password?')
-              )
+        const Text('Remember me'),
+        const Spacer(),
+        TextButton(onPressed: () {}, child: const Text('Forgot password?'))
       ],
     );
   }
@@ -248,15 +250,10 @@ class _FondoState extends State<Fondo> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Colors.blue.shade100,
-            Colors.blue
-          ],
-          begin: Alignment.centerRight,
-          end: Alignment.bottomLeft
-        )
-      ),
+          gradient: LinearGradient(
+              colors: [Colors.blue.shade100, Colors.blue],
+              begin: Alignment.centerRight,
+              end: Alignment.bottomLeft)),
     );
   }
 }
